@@ -1,0 +1,152 @@
+---
+
+
+---
+
+<h1 id="q1">Q1</h1>
+<p><strong>Fault localization</strong> is the process of finding the exact part of your code that is causing a problem. When your program gives the wrong output, you trace back through the code – through <strong>print statements,</strong> a <strong>debugger,</strong> etc. – to figure out where things went wrong.</p>
+<h1 id="q2">Q2</h1>
+<p>In Test Driven Developments, writing tests before writing code may have benefits such as:</p>
+<ul>
+<li>Your tests are not biased by your code</li>
+<li>Writing tests helps you think about how you might write code in the future</li>
+<li>Writing tests helps you think about the system’s requirements</li>
+</ul>
+<h1 id="q3">Q3</h1>
+<p>Using <strong>input domain partitioning</strong>, we identify relevant partitions based on the age criteria for age-based discount calculation:</p>
+<ol>
+<li>Children (ages 0–12): 50% discount</li>
+<li>Seniors (ages 65 and above): 25% discount</li>
+<li>General group (ages 13–64): No discount</li>
+<li>Invalid values (ages below 0)</li>
+<li>Boundary values to check correctness at transition points</li>
+</ol>
+<p><strong>Example inputs:</strong></p>
+<ul>
+<li>invalid inputs: -1, 121</li>
+<li>children: 0, 17</li>
+<li>adults: 18, 64</li>
+<li>seniors: 65, 120</li>
+<li><code>Integer.MIN_VALUE</code>, <code>Integer.MAX_VALUE</code></li>
+</ul>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">public</span> integer <span class="token function">discount</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">{</span> 
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&gt;=</span> <span class="token number">18</span> and age <span class="token operator">&lt;</span> <span class="token number">65</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&lt;</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">25</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token number">50</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="q4">Q4</h1>
+
+<table>
+<thead>
+<tr>
+<th><strong>Partition Criterion</strong></th>
+<th><strong>Valid Partition</strong></th>
+<th><strong>Invalid Partition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number Inclusion</td>
+<td>At least one number</td>
+<td>No numbers</td>
+</tr>
+<tr>
+<td>Lowercase Letter Inclusion</td>
+<td>At least one lowercase letter</td>
+<td>No lowercase letters</td>
+</tr>
+<tr>
+<td>Forbidden Substring (“gmail”)</td>
+<td>Not present</td>
+<td>Present (start, middle, or end)</td>
+</tr>
+<tr>
+<td>Allowed Characters Only</td>
+<td>Only letters, numbers, and <code>_</code></td>
+<td>Contains special characters (<code>!</code>, <code>-</code>, etc.)</td>
+</tr>
+</tbody>
+</table><h1 id="q5">Q5</h1>
+<p>–</p>
+<h1 id="q6">Q6</h1>
+
+<table>
+<thead>
+<tr>
+<th align="center">Test Case</th>
+<th align="center">(a &gt; b)</th>
+<th align="center">G</th>
+<th align="center">(x &lt; y)</th>
+<th align="center">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">T</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">T</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">F</td>
+</tr>
+</tbody>
+</table><h1 id="q7">Q7</h1>
+<p>Since loops are included (the loop between nodes 3 and 4), it’s crucial to notice that we would need to consider each path up to a certain number of loop iterations for testing purposes (e.g. we may limit the number of total loop to keep the set finite).<br>
+Then, paths that would achieve maximum path coverage as a test criteria are:</p>
+<pre><code>1257
+12567
+1357
+13567
+1343567
+134357
+</code></pre>
+
